@@ -1,6 +1,3 @@
-Here's a sample README for a "Chess Insight" project using React and Vite. This README provides an overview of the project, setup instructions, and basic usage guidelines.
-
----
 
 # Chess Insight
 

@@ -7,8 +7,7 @@ const PieChartCarousel = (props) => {
     <>
     <Paper
             sx={{
-              minWidth: '100%',
-            //   marginRight: '900px',
+              minWidth:{xs:'100%',sm:'100%',md:'100%',lg:'100%'},
             margin: '10px',
               padding: '10px',
               borderRadius: '10px',

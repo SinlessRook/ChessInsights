@@ -69,10 +69,14 @@ export default function SimpleContainer(props) {
         <LoadingButton variant="contained"
         loading={false}
         sx={{backgroundColor:'white',color:'black',borderRadius:'10px',fontSize:'1rem'}}
-        ><Typography onClick={()=>{
+        ><Typography onClick={(value)=>{
           if (Username === "") 
           {
             alert("Please Enter Username")
+          }
+          else if(value=='error')
+          {
+            alert('Please Enter a Valid Username')
           }
           else{
           setLoading(true)

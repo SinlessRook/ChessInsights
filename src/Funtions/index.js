@@ -28,8 +28,7 @@ const fetchDetails = async (Username) => {
     try {
         await fetchprofile(Username);
     } catch (error) {
-        alert(error);
-        return true;
+        return 'error';
     }
     setAllZero();
     await fetchStats(Username);
@@ -54,8 +53,6 @@ const fetchDetails = async (Username) => {
         delete opening_white[openingTempWhite]
         delete opening_black[openingTempBlack];
     }
-    // console.log(OpeningMostUsedWhite);
-    // console.log(OpeningMostUsedBlack);
 
     // const result_time = convertSeconds(time);
     // console.log(`Username: ${Profile_Username}`);
@@ -84,10 +81,10 @@ const fetchDetails = async (Username) => {
     // console.log('Bullet:', StatsBullet);
     // console.log('Blitz:', StatsBlitz);
     // console.log('Puzzle:', StatsPuzzle);
-
     return true;
 
 }
+
 const setAllZero = () => {
     time = 0;
     opening_white = {};
@@ -117,10 +114,11 @@ const fetchprofile = async (Username) => {
     } else {
         Profile_Username = info['username'];
         Profile_Followers = info['followers'];
-        Profile_League = info['league'];
+        info['league'].isNaN ? Profile_League = "None" : Profile_League = info['league'];
         Profile_URL = info['url'];
         const country = await fetch(info['country']).then(res => res.json())
         Profile_Country = country['name'];
+        console.log(info);
     }
 }
 

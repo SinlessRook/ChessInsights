@@ -18,7 +18,8 @@ const BarChartCarousal = () => {
       ><Typography variant="h5" sx={{ marginBottom: '10px', padding: '10px' }}>Opening Analysis</Typography>
         <Typography sx={{
           marginBottom: '10px', display: 'flex', padding: '10px',
-          flexDirection: 'row',
+          flexDirection: { xs: 'column',md: 'row' ,sm: 'column' },
+          fontSize: { xs: '10px',md: '15px',sm: '15px' },
         }}>
           <BarAnimation dit={OpeningMostUsedWhite} color="White" />
           <BarAnimation dit={OpeningMostUsedBlack} color="Black" />

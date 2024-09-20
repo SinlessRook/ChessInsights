@@ -12,11 +12,11 @@ export default function ActionAreaCard(props) {
   const best = props.best;
   const img = props.img; 
   return (
-    <Card sx={{ minWidth: 160, margin: '1rem' }}>
+    <Card sx={{ minWidth: 160, margin: '1rem'}}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="50"
+          sx={{height:'200px'}}
           image={img}
           alt="green iguana"
         />

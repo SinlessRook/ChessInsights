@@ -36,7 +36,16 @@ const Home = () => {
         <br />
         <Paper
           elevation={5}
-          sx={{ width: '300px', height: '400px', margin: 'auto', padding: '10px', borderRadius: '10px', backgroundColor: 'white', textAlign: 'center', color: 'black', fontFamily: 'poppins' }}
+          sx={{
+            width: '300px',
+            height: '400px',
+            margin: 'auto',
+            padding: '10px',
+            borderRadius: '10px',
+            backgroundColor: '#E9ECEF',
+            textAlign: 'center',
+            color: 'black', fontFamily: 'poppins'
+          }}
         >
           <div
           >
@@ -59,17 +68,17 @@ const Home = () => {
         <br />
         <br />
         <div
-        className='carousel'
+          className='carousel'
         >
-        <PieChartCarousel data={data} />
-        <PieChartCarousel data={data} />
-        <PieChartCarousel data={data} />
+          <PieChartCarousel data={data} />
+          <PieChartCarousel data={data} />
+          <PieChartCarousel data={data} />
         </div>
         <br />
         <br />
-        <BarChartCarousal/>
-        
-        
+        <BarChartCarousal />
+
+
       </div>
     </div>
   )

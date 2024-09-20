@@ -11,7 +11,6 @@ export default function BarAnimation(props) {
         faded: 'global',
     };
     const handleList = () => {
-        console.log(dit);
         for (const i in dit) {
             if (i=='')
             {
@@ -74,7 +73,8 @@ export default function BarAnimation(props) {
                     {list.map((item, index) => (
                         <>
                             <div key={index} style={{ display: 'flex', flexDirection: 'row' }}>
-                                <div>{index}&nbsp;&nbsp;&nbsp;&nbsp;{item}:</div>
+                                <div>{index}</div>
+                                <div style={{marginLeft:'10px'}}>{item}:</div>
                                 <div style={{marginLeft:'auto',textAlign:'end',color:'green'}}>{(series[0].data[index] / (series[0].data[index]+series[1].data[index]+series[2].data[index])*100).toFixed(2)}%</div>
                             </div>
                             <Divider variant="middle" flexItem />

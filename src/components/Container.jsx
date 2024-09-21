@@ -25,6 +25,7 @@ export default function SimpleContainer(props) {
       <motion.div
       initial={{y:'30vh',scale:0}}
       whileInView={{opacity:1,scale:1,y:0,transition:{delay:0.2,duration:1,type:'spring'}}}
+      viewport={{amount:0.1}}
       >
       <Container
         sx={{ minWidth: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}
@@ -42,7 +43,7 @@ export default function SimpleContainer(props) {
   value={Username}
   onChange={(e) => setUsername(e.target.value)}
   sx={{
-    minWidth: '900px',
+    minWidth: {md:'900px',sm:'500px',xs:'400px'},
     margin: '3rem',
     fontFamily: 'Poppins, sans-serif',
     backgroundColor: 'white',
@@ -77,8 +78,9 @@ export default function SimpleContainer(props) {
 
           <LoadingButton variant="contained"
             loading={false}
-            sx={{ backgroundColor: 'white', color: 'black', borderRadius: '100px', fontSize: '1rem',":hover":{backgroundColor:'black',color:'white',textShadow:'1px 1px 10px white',boxShadow:'1px 1px 1px white'} }}
-          ><Typography onClick={() => {
+            sx={{backgroundColor: 'white', color: 'black', borderRadius: '100px', fontSize: '1rem',":hover":{backgroundColor:'black',color:'white',textShadow:'1px 1px 10px white',boxShadow:'1px 1px 1px white'} }}
+          ><Typography 
+          onClick={() => {
             if (Username === "") {
               alert("Please Enter Username")
             }

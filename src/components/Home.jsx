@@ -41,10 +41,6 @@ const Home = () => {
         className='heading'>Welcome {Profile_Username.toUpperCase()}</motion.h1>
       <div className='home'>
         <motion.div 
-        initial={{scale:0,opacity:0}}
-        whileInView={{scale:1,opacity:1}}
-        transition={{delay:0.6,duration:0.5}}
-        viewport={{ once: false, amount: 0.2 }}
         className='header'>
           <BasicCard />
         </motion.div>

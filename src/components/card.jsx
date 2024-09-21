@@ -6,6 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import { Profile_Country, Profile_Followers, Profile_League, Profile_Username, Profile_URL, StatsRapid, StatsBlitz, StatsBullet, StatsPuzzle } from '../Funtions';
 import ActionAreaCard from './Detail_Card';
 import { RapidImg, BulletImg, BlitzImg, PuzzleImg } from '../assets/utils/Images/index';
+import {motion} from 'framer-motion'
 
 function stringToColor(string) {
   let hash = 0;
@@ -50,6 +51,11 @@ export default function BasicCard() {
             justifyContent: 'space-between',
           }}
         >
+          <motion.div
+          initial={{opacity:0,y:'15vh'}}
+          whileInView={{opacity:1,y:0}}
+          transition={{duration:1.5,staggerChildren:1}}
+          >
           <Typography>
             <Typography
               variant="h5"
@@ -85,6 +91,8 @@ export default function BasicCard() {
               </a>
             </Typography>
           </Typography>
+          </motion.div>
+         
           <Typography
             sx={{
               display: 'grid',
@@ -94,10 +102,22 @@ export default function BasicCard() {
               gap: { xs: '10px', sm: '0' },
             }}
           >
+            <motion.div className='grid grid-col-2'
+            initial={{opacity:0,scale:0}}
+            whileInView={{opacity:1,scale:1}}
+            transition={{type:'spring',delay:0.3,staggerChildren:1,staggerDirection:1}}
+            >
             <ActionAreaCard type="Rapid" value={StatsRapid[3]} img={RapidImg} best={StatsRapid[4]} />
             <ActionAreaCard type="Blitz" value={StatsBlitz[3]} img={BlitzImg} best={StatsBlitz[4]} />
+            </motion.div>
+            <motion.div className='grid grid-col-2'
+            initial={{opacity:0,scale:2}}
+            whileInView={{opacity:1,scale:1}}
+            transition={{type:'spring',delay:0.3,staggerChildren:1,staggerDirection:-1}}
+            >
             <ActionAreaCard type="Bullet" value={StatsBullet[3]} img={BulletImg} best={StatsBullet[4]} />
             <ActionAreaCard type="Puzzle" value={StatsPuzzle[0]} img={PuzzleImg} best={StatsPuzzle[1]} />
+            </motion.div> 
           </Typography>
         </Typography>
       </CardContent>

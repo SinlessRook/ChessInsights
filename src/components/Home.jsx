@@ -7,6 +7,8 @@ import { TimeSpent } from '../assets/utils/Images';
 import { convertSeconds } from '../Funtions'
 import PieChartCarousel from './PieChartCarousel';
 import BarChartCarousal from './BarChartCarousal';
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 const Home = () => {
   const data = [{
     id: 0,
@@ -24,14 +26,28 @@ const Home = () => {
     label: 'Draws'
   }]
   const result_time = convertSeconds(time);
+  const [isanimated, setisanimated] = React.useState(false);
+  useEffect(() => {
+    setisanimated(true)
+  })
   return (
 
     <div className='body' >
-      <h1 className='heading'>Welcome {Profile_Username.toUpperCase()}</h1>
+      <motion.h1
+        initial={{opacity: 0,rotateY:360}}
+        whileInView={{ opacity: 1,rotateY:0}}
+        transition={{ duration: 0.5,delay:0.5}}
+        viewport={{ once: true }}
+        className='heading'>Welcome {Profile_Username.toUpperCase()}</motion.h1>
       <div className='home'>
-        <div className='header'>
+        <motion.div 
+        initial={{scale:0,opacity:0}}
+        whileInView={{scale:1,opacity:1}}
+        transition={{delay:0.6,duration:0.5}}
+        viewport={{ once: false, amount: 0.2 }}
+        className='header'>
           <BasicCard />
-        </div>
+        </motion.div>
         <br />
         <br />
         <Paper
